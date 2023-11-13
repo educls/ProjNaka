@@ -75,6 +75,7 @@ class Ui_MainWindow(object):
         self.pbAtualizar.setEnabled(False)
         self.pbAtualizar.setGeometry(QtCore.QRect(170, 150, 101, 23))
         self.pbAtualizar.setObjectName("pbAtualizar")
+        self.pbAtualizar.clicked.connect(self.atualizar)
 
 
 
@@ -82,6 +83,7 @@ class Ui_MainWindow(object):
         self.pbExcluir.setEnabled(False)
         self.pbExcluir.setGeometry(QtCore.QRect(280, 150, 75, 23))
         self.pbExcluir.setObjectName("pbExcluir")
+        self.pbExcluir.clicked.connect(self.excluir)
 
 
         ## busca campo
@@ -165,6 +167,7 @@ class Ui_MainWindow(object):
             print("Usuário cadastrado - ID= ", self.cursor.lastrowid)
         except Exception as error:
             print("Falha ao cadastrar o usuário. Erro: ", error)
+        self.limpar()
 
     def consultar(self):
         sql="SELECT * FROM usuarios WHERE nomeUsuario= %s"
@@ -180,7 +183,6 @@ class Ui_MainWindow(object):
 
             for row in result:
                 item = QStandardItem(str(row))
-                print(row)
                 model.appendRow([item])
             self.lvUsuarioList.setModel(model)
 
@@ -188,16 +190,71 @@ class Ui_MainWindow(object):
                 self.pbAtualizar.setEnabled(True)
                 self.pbExcluir.setEnabled((True))
                 self.pbCadastrar.setEnabled(False)
-                self.leIdUsuario.setEnabled(True)
             else:
                 self.pbExcluir.setEnabled(False)
                 self.pbAtualizar.setEnabled(False)
 
         except Exception as error:
             print("Falha ao consultar. Erro: ", {error})
+        return result
+
 
     def item_clicado(self, index):
         row = index.row()
+        linha = self.consultar()
+        print(linha[row][3])
+
+        self.leIdUsuario.setText(str(linha[row][0]))
+        self.leNome.setText(str(linha[row][1]))
+        self.leSenha.setText(str(linha[row][2]))
+        if linha[row][3] == "administrador":
+            self.checkAdm.setChecked(True)
+            self.checkUser.setChecked(False)
+        else:
+            self.checkUser.setChecked(True)
+            self.checkAdm.setChecked(False)
+
+
+    def atualizar(self):
+        sql = 'UPDATE usuarios SET nomeUsuario= %s, senha= %s, contaTipo= %s WHERE idUsuario= %s'
+        idUsuario = self.leIdUsuario.text()
+        nomeUsuario = self.leNome.text()
+        senha = self.leSenha.text()
+        if self.checkAdm.isChecked():
+            contaTipo = "administrador"
+        else:
+            contaTipo = "usuario"
+        values = (nomeUsuario, senha, contaTipo, idUsuario)
+
+        try:
+            self.cursor.execute(sql, values)
+            self.con.commit()
+            print("Usuário atualizado - ID = ", self.cursor.lastrowid)
+        except Exception as error:
+            print("Falha ao atualizar o usuário. Erro: ", error)
+        self.limpar()
+
+    def excluir(self):
+        sql = 'DELETE FROM usuarios WHERE idUsuario= %s'
+        idUsuario = self.leIdUsuario.text()
+        values = (idUsuario, )
+
+        try:
+            self.cursor.execute(sql, values)
+            self.con.commit()
+            print("Usuário Deletado")
+        except Exception as error:
+            print("Falha ao deletar o usuário. Erro: ", error)
+        self.limpar()
+        self.leBusca.setText("")
+
+
+    def limpar(self):
+        self.leIdUsuario.setText("")
+        self.leNome.setText("")
+        self.leSenha.setText("")
+        self.checkAdm.setChecked(False)
+        self.checkUser.setChecked(False)
 
 
 if __name__ == "__main__":
