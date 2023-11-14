@@ -30,6 +30,9 @@ class CadastroUsuario:
     def consultar(self):
         dados=self.userControle.consultar(self.tela.leBusca.text())
 
+        if dados==None:
+            return True
+
         model = QStandardItemModel()
 
         item = QStandardItem(str(dados[1]))
@@ -71,6 +74,7 @@ class CadastroUsuario:
                                             checkadm):
             print('Usuario atualizado')
             self.limpar()
+
         self.tela.leNome.setEnabled(True)
 
     def excluir(self):
@@ -90,6 +94,9 @@ class CadastroUsuario:
         self.tela.pbCadastrar.setEnabled(True)
         self.tela.pbAtualizar.setEnabled(False)
         self.tela.pbExcluir.setEnabled(False)
+
+
+        self.tela.lvUsuarioList.setModel(None)
 
     def itemClicado(self, index):
         row = index.row()

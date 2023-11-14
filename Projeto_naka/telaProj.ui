@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>673</width>
-    <height>280</height>
+    <width>1013</width>
+    <height>411</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,11 +17,16 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>60</x>
       <y>20</y>
-      <width>61</width>
-      <height>16</height>
+      <width>121</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Id Usuario:</string>
@@ -30,11 +35,16 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>50</y>
-      <width>41</width>
-      <height>20</height>
+      <x>100</x>
+      <y>80</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Nome:</string>
@@ -43,11 +53,16 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>80</y>
-      <width>41</width>
-      <height>16</height>
+      <x>100</x>
+      <y>140</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Senha:</string>
@@ -56,11 +71,16 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>81</width>
-      <height>20</height>
+      <x>50</x>
+      <y>200</y>
+      <width>161</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Tipo de Conta:</string>
@@ -69,31 +89,46 @@
    <widget class="QLineEdit" name="leIdUsuario">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>200</x>
       <y>20</y>
-      <width>113</width>
-      <height>20</height>
+      <width>211</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QLineEdit" name="leNome">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>50</y>
-      <width>321</width>
-      <height>20</height>
+      <x>200</x>
+      <y>80</y>
+      <width>341</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QLineEdit" name="leSenha">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>80</y>
-      <width>113</width>
-      <height>20</height>
+      <x>200</x>
+      <y>140</y>
+      <width>211</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QPushButton" name="pbCadastrar">
@@ -102,11 +137,16 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>150</y>
-      <width>75</width>
-      <height>23</height>
+      <x>70</x>
+      <y>270</y>
+      <width>121</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Cadastrar</string>
@@ -118,11 +158,16 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>150</y>
-      <width>101</width>
-      <height>23</height>
+      <x>230</x>
+      <y>270</y>
+      <width>141</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Atualizar</string>
@@ -134,11 +179,16 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>150</y>
-      <width>75</width>
-      <height>23</height>
+      <x>410</x>
+      <y>270</y>
+      <width>131</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Excluir</string>
@@ -147,44 +197,64 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>560</x>
       <y>20</y>
-      <width>47</width>
-      <height>14</height>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>Busca</string>
+     <string>Busca:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="leBusca">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>650</x>
       <y>20</y>
-      <width>181</width>
-      <height>20</height>
+      <width>331</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QListView" name="lvUsuarioList">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>50</y>
-      <width>221</width>
-      <height>192</height>
+      <x>560</x>
+      <y>70</y>
+      <width>421</width>
+      <height>261</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QRadioButton" name="checkAdm">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>110</y>
-      <width>91</width>
-      <height>21</height>
+      <x>220</x>
+      <y>200</y>
+      <width>181</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Administrador</string>
@@ -193,11 +263,16 @@
    <widget class="QRadioButton" name="checkUser">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>110</y>
-      <width>91</width>
-      <height>21</height>
+      <x>410</x>
+      <y>200</y>
+      <width>111</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Usuário</string>
@@ -209,8 +284,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>673</width>
-     <height>21</height>
+     <width>1013</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
