@@ -59,7 +59,7 @@ class CadastroUsuario:
                                     self.tela.leNome.text(),
                                     self.tela.leSenha.text(),
                                     checkadm):
-            print("Produto Cadastrado!")
+            print("Usuario Cadastrado!")
             self.limpar()
 
     def atualizar(self):
