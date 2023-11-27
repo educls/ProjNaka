@@ -28,3 +28,9 @@ $ pip install PyQt5
 ```bash
 $ pip install PyQt5-Tools
 ```
+
+
+## PyQt5 Designer
+```bash
+$ pip install PyQtDesigner
+```
